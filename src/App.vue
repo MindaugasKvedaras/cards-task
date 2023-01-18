@@ -1,21 +1,18 @@
 <template>
   <div id="app">
-    <draggable class="flex" v-model="cardData" @start="drag = true" @end="drag = false">
-        <card-item v-for="card in cardData" :data="card" :key="card.id">
-        </card-item>
+    <draggable
+      class="flex"
+      v-model="cardData"
+      @start="drag = true"
+      @end="drag = false"
+    >
+      <card-item
+        v-for="card in cardData"
+        :cardData="card"
+        :key="card.id"
+      >
+      </card-item>
     </draggable>
-
-    <!-- <a-card :title="this.cardData[0].title" style="width: 300px">
-      <a-list item-layout="horizontal" :data-source="this.cardData[0].option">
-      <a-list-item slot="renderItem" slot-scope="item">
-        <a-list-item-meta :description="item.data">
-          <h4 slot="title" href="https://www.antdv.com/">{{
-            item.name
-          }}</h4>
-        </a-list-item-meta>
-      </a-list-item>
-    </a-list>
-  </a-card> -->
   </div>
 </template>
 
@@ -51,12 +48,6 @@ export default {
       ],
 
       cardData: [],
-      // cardOptions: [
-      //   { name: this.sysinfo[0][0], data: this.sysinfo[0][1] },
-      //   { name: this.sysinfo[1][0], data: this.sysinfo[1][1] },
-      //   { name: this.sysinfo[2][0], data: this.sysinfo[2][1],
-      //   },
-      // ],
     };
   },
 
